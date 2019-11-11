@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import com.diamond.presidentofus.R;
 
 public class Form extends AppCompatActivity {
-    EditText name, email;
+    EditText name, email,age;
     Spinner spinner;
     Button btnRegister;
 
@@ -36,6 +36,7 @@ public class Form extends AppCompatActivity {
         email = findViewById(R.id.email);
         btnRegister = findViewById(R.id.btnRegister);
         spinner = findViewById(R.id.spinner);
+        age=findViewById(R.id.age);
 
 
         ArrayAdapter adapter = new ArrayAdapter<>(this,
@@ -47,14 +48,26 @@ public class Form extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sname, semail, scountry;
+                //Validation
+                if(name.getText().toString().matches("")){
+                    name.setError("Enter Name");
+                    return;
+                }if(email.getText().toString().matches("")){
+                    email.setError("Enter Email");
+                    return;
+                }if(age.getText().toString().matches("")){
+                    age.setError("Enter Age");
+                    return;
+                }
+                String sname, semail, scountry,sage;
                 sname = name.getText().toString();
                 semail = email.getText().toString();
                 scountry = spinner.getSelectedItem().toString();
-
+                sage=age.getText().toString();
                 Intent intentForm = new Intent(Form.this, Display.class);
                 intentForm.putExtra("formName", sname);
                 intentForm.putExtra("formEmail", semail);
+                intentForm.putExtra("formAge", sage);
                 intentForm.putExtra("formCountry", scountry);
                 startActivity(intentForm);
             }

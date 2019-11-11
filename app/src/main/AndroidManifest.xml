@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.Dashboard"> <intent-filter>
+        <activity android:name=".activities.Dashboard" android:label="Dashboard"> <intent-filter>
             <action android:name="android.intent.action.MAIN" />
-
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
         <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".activities.Display"
             android:parentActivityName=".activities.Form" />
         <activity android:name=".activities.Form" />
         <activity
             android:name=".activities.PresidentDetail"
+            android:label="President"
             android:parentActivityName=".activities.MainActivity" />
         <activity android:name=".activities.MainActivity">
 
