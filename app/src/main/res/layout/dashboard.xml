@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_margin="20dp"
+        android:id="@+id/assignment1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="assignment1"
+        android:text="Assignment 1" />
+
+    <Button
+        android:id="@+id/assignment2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="assignment2"
+        android:layout_margin="25dp"
+        android:text="Assignment 2" />
+</LinearLayout>
